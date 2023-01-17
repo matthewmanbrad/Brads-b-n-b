@@ -22,7 +22,7 @@ function Footer() {
       <div className="space-y-4 text-xs text-gray-800">
         <h5 className="font-bold">HOST</h5>
         <p>Brad Matthewman</p>
-        <p>Presents</p>
+        <p>Presenting</p>
         <p>Airbnb</p>
         <p>Personal</p>
         <p>Projects</p>
