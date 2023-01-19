@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Map, { Marker, Popup, MapboxMarker } from "react-map-gl";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { getCenter } from "geolib";
 
 function MyMap({ searchResults }) {
@@ -17,14 +17,15 @@ function MyMap({ searchResults }) {
     height: "100%",
     latitude: center.latitude,
     longitude: center.longitude,
-    zoom: 11,
+    zoom: 12,
   });
 
   return (
-    <Map
+    <ReactMapGL
       mapStyle="mapbox://styles/matthewmanbrad/cld2738hn000601lca6d537z4"
-      mapboxAccessToken={process.env.mapbox_key}
-      initialViewState={{ ...viewport }}
+      mapboxApiAccessToken={process.env.mapbox_key}
+      {...viewport}
+      onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
       {searchResults.map((result) => (
         <div key={result.long}>
@@ -57,7 +58,7 @@ function MyMap({ searchResults }) {
           )}
         </div>
       ))}
-    </Map>
+    </ReactMapGL>
   );
 }
 
