@@ -17,7 +17,7 @@ function MyMap({ searchResults }) {
     height: "100%",
     latitude: center.latitude,
     longitude: center.longitude,
-    zoom: 12,
+    zoom: 11,
   });
 
   return (
